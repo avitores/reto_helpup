@@ -3,7 +3,7 @@
     <h1>Welcome <%= current_user.name %> <%= current_user.surname %> (<%= current_user.email %>)</h1>
     <div class="row">
       <div class="col-md-3 col-sm-3 col-xs-6">    
-        <div class="card" style="width:400px">
+        <div class="card" style="width:350px">
           <%= image_tag current_user.avatar_url, :height => 150, class: "card-img-top img-responsive", alt: current_user.name if current_user.avatar? %>
           <div class="card-body">
             <h4 class="card-title"><%= current_user.name %> <%= current_user.surname %></h4>
@@ -25,7 +25,7 @@
               </div>
             </div>
 
-            <%= link_to 'Log Out', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete, class: "btn btn-lg btn-warning float-right" %>
+            <%= link_to 'Desconectar', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete, class: "btn btn-lg btn-warning float-right" %>
           </div>
         </div>
       </div>

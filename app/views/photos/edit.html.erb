@@ -11,7 +11,6 @@
         <%= render 'form', photo: @photo %>
 
       </div>
-      <%= link_to 'Ver', @photo, class:'btn btn-lg btn-info' %>
       <%= link_to 'Volver al album', Album.find(@photo.album_id), class:'btn btn-lg btn-secondary' %>
     </div>
   </div>

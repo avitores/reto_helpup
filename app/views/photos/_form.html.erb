@@ -10,7 +10,8 @@
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
     <% if photo.image? %>
-      <%= image_tag photo.image.thumb.url %>
+      <%= image_tag(photo.image.thumb.url, alt: photo.name, :class=>"card-img-top img-thumbnail") %>
+      
     <% end %>    
   </div>
 
