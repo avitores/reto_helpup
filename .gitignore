@@ -1,0 +1,21 @@
+log/development.log
+db/schema.rb
+tmp/cache/
+tmp/pids/
+public/uploads
+
+
+#PARA HEROKU
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore ruby-version
+/.ruby-version

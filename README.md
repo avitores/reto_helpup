@@ -1,5 +1,3 @@
-# reto_helpup
-
 # Album de fotos
 
 Aplcación en Ruby on Rails.

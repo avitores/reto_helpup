@@ -1,0 +1,30 @@
+<%= form_for(photo) do |f| %>
+  <%= devise_bootstrap_error_messages! %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+    <% if photo.image? %>
+      <%= image_tag photo.image.thumb.url %>
+    <% end %>    
+  </div>
+
+  <div class="field" style="display:none">
+    <%= f.label :album_id %>
+    <%=
+    f.select(:album_id, current_user.albums.collect{|a| ["#{a.name}", a.id]})
+    %>
+    
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit  t('.update', :default => "Actualizar"), class: "btn btn-lg btn-primary" %>
+  </div>
+
+<% end %>

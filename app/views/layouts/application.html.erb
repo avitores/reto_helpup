@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+      <title>RETO</title>
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  
+    </head>
+    <body>
+    
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <% img = ('logo.png' if !current_user || !current_user.avatar?) || current_user.avatar %>
+        <%= link_to image_tag(img, :width=>"35"), root_path, class: 'navbar-brand' %> 
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+            <ul class="navbar-nav">
+              <% if current_user %>
+                <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
+                  <%= link_to "Editar perfil", edit_user_registration_path(current_user), class: "btn btn-lg btn-primary" %>
+                </li>
+              <% end %>
+              <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
+                <% ruta = (albums_path if !current_user || current_user.albums.count != 1) || current_user.albums.first %>
+                <div class="btn-group">
+                  <%= link_to 'albumes', ruta, class:'btn btn-lg btn-info' %>
+                  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                    <span class="caret"></span>
+                  </button>
+                  <% if current_user %> 
+                    <div class="dropdown-menu">
+                      <% current_user.albums.each do |alb| %>
+                        <%= link_to alb.name, alb, class: "dropdown-item"  %>
+                      <% end %>
+                      <div class="dropdown-divider"></div>
+                      <%= link_to "Nuevo album", new_album_path, class: "dropdown-item"  %>
+                    </div>
+                  <% end %>
+                </div>
+              </li>
+              <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
+                <% ruta = (root_path if !current_user) || eval("destroy_#{current_user.type.downcase}_session_path") %>
+                <% label = ("Log in" if !current_user) || "Log out" %>
+                <% met = (:get if !current_user) || :delete %>
+                <%= button_to label, ruta, method: met, class:'btn btn-lg btn-warning navbar-btn' %>
+              </li>
+            </ul>
+          </div>
+      </nav>
+
+      <div class="container">
+        <div class="container-fluid">
+          <%= render partial: 'shared/flash' unless flash.empty? %>
+          <%= yield %>
+        </div>
+      </div>
+
+
+  </body>
+</html>
+
