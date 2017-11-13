@@ -16,7 +16,7 @@ class AlbumsController < InheritedResources::Base
     @photos = @album.photos.paginate(page: params[:page], per_page: 6)
     
   end
-
+  
   private
 
     def album_params

@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Wellcome"
+  edit_profile: "Edit profile"
+  albums: "Albums"
+  new_album: "New album"
+

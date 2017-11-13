@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :albums
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => { registrations: 'registrations' }
-  
+
 #  devise_for :admins, ActiveAdmin::Devise.config
 
   # below code to fix the active admin issue when table not exists in database as activeadmin tries to load every model.

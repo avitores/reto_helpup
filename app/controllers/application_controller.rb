@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
       when Admin
         root_path
     end
-  end
+  end  
 
 end
