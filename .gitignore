@@ -2,7 +2,8 @@ log/development.log
 db/schema.rb
 tmp/cache/
 tmp/pids/
-public/uploads
+public/uploads/
+dbs-data/
 
 
 #PARA HEROKU
