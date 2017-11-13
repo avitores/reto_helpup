@@ -42,7 +42,9 @@
             <% end %>
 
           </div>
-          <%= link_to image_tag(photo.image.thumb.url, alt: photo.name, :class=>"card-img-top img-thumbnail"), photo %>
+
+          <%= link_to(image_tag(photo.image.thumb.url, alt: photo.name, :class=>"card-img-top img-thumbnail"), photo.image_url, data: { lightbox: "example-set", title: photo.name }) %> 
+    
         </div>
       <% end %>
     <% else %>

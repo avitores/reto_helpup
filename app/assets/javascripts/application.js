@@ -15,6 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require lightbox
 //= require_tree .
 
 // tether.js must be included before bootstrap.js
