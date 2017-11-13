@@ -11,13 +11,13 @@
                 <span class="glyphicon <%= ("glyphicon-minus-sign" if album.public == false) || "glyphicon-globe" %>"></span> <%= ("Privado" if album.public == false ) || "Público" %>
               </span>
               <br/><%= album.photos.count %> photos</td>
-            <td width="20px"><%= link_to 'Editar', edit_album_path(album), class:'btn btn-lg btn-primary' %></td>
-            <td width="20px"><%= link_to 'Eliminar', @album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-lg btn-danger' %></td>
+            <td width="20px"><%= link_to 'Editar', edit_album_path(album), class:'btn btn-lg btn-primary' if current_user %></td>
+            <td width="20px"><%= link_to 'Eliminar', @album, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-lg btn-danger' if current_user %></td>
           </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-<%= link_to 'Nuevo', new_album_path, class:'btn btn-lg btn-info' %>
+<%= link_to 'Nuevo', new_album_path, class:'btn btn-lg btn-info' if current_user %>
 

@@ -1,8 +1,9 @@
 class AlbumsController < InheritedResources::Base
-  before_action :authenticate_user!
+#  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:show, :index]
 
   def index
-    @albums = current_user.albums
+    @albums = (current_user.albums if current_user) || Album.where(public: true)
   end
   
   def new
@@ -12,7 +13,7 @@ class AlbumsController < InheritedResources::Base
   
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos.paginate(page: params[:page], per_page: 4)
+    @photos = @album.photos.paginate(page: params[:page], per_page: 6)
     
   end
 
