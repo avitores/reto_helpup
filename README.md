@@ -26,7 +26,7 @@ Archivos de imagen contenidas en los álbumes de fotos perteneciente a los usuar
 ## Web. 
 * [Bootstrap4] - diseño y maquetación.
 * [Will_paginate] - Paginación.
-* [Livebox2] - Visualización de imágenes.
+* [Lightbox2] - Visualización de imágenes.
 
 ## Proyecto
 * [Heroku] Aplicación alojada en servidor gratuito. https://retohelpup.herokuapp.com/
