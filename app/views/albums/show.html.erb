@@ -14,12 +14,12 @@
     <% if @photos.count > 0 %>
       <% @photos.each do |photo| %>
       
-        <div class="col-sm-4 col-md-6 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
           <div class="card-body">
             <h3 class="card-title"><%= photo.name %></h3>
 
             <%= link_to 'Editar', edit_photo_path(photo), class: "btn btn-primary" if current_user %>
-            <%= link_to 'Eliminar', photo, method: :delete, data: { confirm: 'Está seguro?' }, class:'btn btn-danger' if current_user  %>
+            <%= link_to 'Eliminar', photo, method: :delete, data: { confirm: 'Está seguro?' }, class:'btn btn-danger' if current_user  %><br/><br/>
 
             <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{root_url[0..-2]}#{photo.image.url}&title=#{photo.name}",  title: 'Compartir en Facebook', :class=>"btn btn-outline-primary btn-social btn-facebook" do %>
               <span class="btn-facebook fa fa-facebook"></span>
@@ -28,13 +28,13 @@
             <%= link_to "https://twitter.com/intent/tweet?url=#{root_url[0..-2]}#{photo.image.url}&text=#{photo.album.name}: #{photo.name}&source=#{root_url}",  title: 'Compartir en Twitter', :class=>"btn btn-outline-primary btn-social-icon btn-twitter" do %>
               <span class="btn-twitter fa fa-twitter"></span>
             <% end %>
-            
+
             <%= link_to "https://www.linkedin.com/shareArticle?mini=true&url=#{root_url[0..-2]}#{photo.image.url}&title=#{photo.name}&summary=#{photo.album.name}: #{photo.name}",  title: 'Compartir en LinkedIn', :class=>"btn btn-outline-primary btn-social-icon btn-linkedin" do %>
               <span class="btn-linkedin fa fa-linkedin"></span>
             <% end %>
 
             <%= link_to "https://mail.google.com/mail/u/0/?view=cm&su=#{photo.album.name}: #{photo.name}&body=#{photo.album.name}: #{photo.name}%0D%0A%0D%0A#{root_url[0..-2]}#{photo.image.url}%0D%0A%0D%0AFrom #{root_url}",  title: 'Enviar desde Gmail', :class=>"btn btn-outline-primary btn-social-icon btn-google" do %>
-              <span class="btn-linkedin fa fa-google"></span>
+              <span class="btn-google fa fa-google"></span>
             <% end %>
 
             <%= mail_to "", subject: "#{photo.album.name} - #{photo.name}", body: "#{photo.album.name} - #{photo.name}\r#{root_url[0..-2]}#{photo.image.url}\rFrom #{root_url}", title: 'Enviar por correo', :class=>"btn btn-outline-primary btn-social-icon btn-envelope" do %>

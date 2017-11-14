@@ -22,33 +22,35 @@
         <% img = ('logo.png' if !current_user || !current_user.avatar?) || current_user.avatar %>
         <%= link_to image_tag(img, :width=>"35"), root_path, class: 'navbar-brand' %> 
 
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         
         <!-- Links -->
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
-            <ul class="navbar-nav">
-              <% if current_user %>
-                <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
-                  <%= link_to t(:edit_profile), edit_user_registration_path(current_user), class: "btn btn-lg btn-primary" %>
-                </li>
-              <% end %>
-              
+          <ul class="navbar-nav">
+            <% if current_user %>
               <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
-                <%= link_to t(:albums), albums_path, id: "navbardrop", class:"btn btn-lg btn-info" %>
+                <%= link_to t(:edit_profile), edit_user_registration_path(current_user), class: "nav-link btn btn-lg btn-primary" %>
               </li>
+            <% end %>
+            
+            <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
+              <%= link_to t(:albums), albums_path, id: "navbardrop", class:"nav-link btn btn-lg btn-info" %>
+            </li>
 
-              <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
-                <% ruta = (root_path if !current_user) || eval("destroy_#{current_user.type.downcase}_session_path") %>
-                <% label = (t(:login) if !current_user) || t(:logout) %>
-                <% met = (:get if !current_user) || :delete %>
-                <%= button_to label, ruta, method: met, class:'btn btn-lg btn-warning navbar-btn' %>
-              </li>
-            </ul>
-          </div>
+            <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
+              <% ruta = (root_path if !current_user) || eval("destroy_#{current_user.type.downcase}_session_path") %>
+              <% label = (t(:login) if !current_user) || t(:logout) %>
+              <% met = (:get if !current_user) || :delete %>
+              <%= link_to label, ruta, method: met, class:'nav-link btn btn-lg btn-warning navbar-btn' %>
+            </li>
+          </ul>
+          
+        </div>
+        
       </nav>
 
       <div class="container">
