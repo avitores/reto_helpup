@@ -3,8 +3,8 @@
 es:
   welcome: "Bienvenido"
   edit_profile: "Editar perfil"
-  albums: "Albumes"
-  new_album: "Nuevo album"
+  albums: "Álbumes"
+  new_album: "Nuevo álbum"
   login: "Conectar"
   logout: "Desconectar"
   signup: "Registrarse"

@@ -10,7 +10,7 @@
             <p class="card-text"><%= current_user.email %></p>
             <%= link_to 'Editar perfil', edit_user_registration_path(current_user), class: "btn btn-lg btn-primary" %>
 
-            <%= link_to 'Albumes', albums_path, class:'btn btn-lg btn-info' %>
+            <%= link_to 'Álbumes', albums_path, class:'btn btn-lg btn-info' %>
 
             <%= link_to 'Desconectar', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete, class: "btn btn-lg btn-warning float-right" %>
           </div>
