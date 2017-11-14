@@ -13,7 +13,7 @@ class AlbumsController < InheritedResources::Base
   
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos.paginate(page: params[:page], per_page: 6)
+    @photos = @album.photos.paginate(page: params[:page], per_page: MAX_PHOTO_PER_PAGE)
     
   end
   
