@@ -24,4 +24,7 @@ en:
   edit_profile: "Edit profile"
   albums: "Albums"
   new_album: "New album"
+  login: "Log in"
+  logout: "Log out"
+  signup: "Sign up"
 

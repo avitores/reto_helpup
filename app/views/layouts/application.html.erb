@@ -43,7 +43,7 @@
 
               <li class="nav-item" style="margin-right:5px; margin-bottom:4px;">
                 <% ruta = (root_path if !current_user) || eval("destroy_#{current_user.type.downcase}_session_path") %>
-                <% label = ("Conectar" if !current_user) || "Desconectar" %>
+                <% label = (t(:login) if !current_user) || t(:logout) %>
                 <% met = (:get if !current_user) || :delete %>
                 <%= button_to label, ruta, method: met, class:'btn btn-lg btn-warning navbar-btn' %>
               </li>
