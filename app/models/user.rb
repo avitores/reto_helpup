@@ -1,8 +1,7 @@
 class User < Patron
-  devise :invitable, :registerable, :confirmable
+  devise :invitable, :registerable
   
   has_many :albums, :dependent => :destroy
-  
   
   after_create :create_album
   
