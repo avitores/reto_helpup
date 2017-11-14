@@ -44,15 +44,6 @@ El proyecto puede ser ejecutado localmente mediante "Docker"
 https://retohelpup.herokuapp.com/
 
 ## Ayuda aplicación
-### Álbumes/fotos:
-Muestra todos los álbumes públicos / privados (si se ha iniciado la sesión).
-* Crear, Eliminar, Editar álbum 
-* Hacer álbum público
-* Añadir fotos al álbum
-* Editar, Eliminar fotos del álbum
-* Publicar fotos en redes sociales para usuarios registrados o álbumes públicos (facebook, twitter, linkedin)
-* Enviar fotos por mail para usuarios registrados o álbumes públicos (Gmail, mail_to)
-* Visualizar fotos (carrusel Livebox2)
 ### Conectar:
 Para iniciar sesión
 Usuario: ejemplo@test.com
@@ -66,5 +57,14 @@ Cerrar la sesión
 Editar datos de usuario: Nombre, apellido, contraseña, avatar...
 ### Cancelar cuenta:
 Eliminar el usuario y sus álbumes...
+### Álbumes/fotos:
+Muestra todos los álbumes públicos / privados (si se ha iniciado la sesión).
+* Crear, Eliminar, Editar álbum 
+* Hacer álbum público
+* Añadir fotos al álbum
+* Editar, Eliminar fotos del álbum
+* Publicar fotos en redes sociales para usuarios registrados o álbumes públicos (facebook, twitter, linkedin)
+* Enviar fotos por mail para usuarios registrados o álbumes públicos (Gmail, mail_to)
+* Visualizar fotos (carrusel Livebox2)
 
 
