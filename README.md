@@ -1,6 +1,8 @@
+
 # Álbum de fotos "Reto HelpUp"
 Madrid 14 de Noviembre de 2017
 Aplicación para almacenamiento de fotos en álbumes pertenecientes a usuarios registrados.
+Aplicación RAILS
 https://github.com/avitores/reto_helpup.git
 https://retohelpup.herokuapp.com/
 
