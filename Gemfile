@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
@@ -51,6 +50,9 @@ gem 'bootstrap-will_paginate'
 # Sharing pictures
 #gem 'social-share-button'
 gem "font-awesome-rails"
+
+gem 'activeadmin'#, '~> 1.0.0.pre2'
+
 
 
 group :development, :test do

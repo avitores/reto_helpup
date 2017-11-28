@@ -17,3 +17,12 @@ module RetoHelpUp
      config.i18n.default_locale = :es
   end
 end
+
+module NewApiApp
+	class Application < Rails::Application
+	# ...
+		config.middleware.use ActionDispatch::Flash
+		config.middleware.use Rack::MethodOverride
+		config.middleware.use ActionDispatch::Cookies
+	end
+end
